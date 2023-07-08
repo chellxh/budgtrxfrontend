@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "empiresregular";
+  src: url("../../assets/font/empire/empires-webfont.woff2") format("woff2"),
+    url("../../assets/font/empire/empires-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: "ysabaeusc";
+  src: url("../../assets/font/ysabeauSC/YsabeauSC-VariableFont_wght.ttf")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(12, 2, 2);
+}
+
+span {
+  color: rgb(171, 18, 18);
+  font-family: "empiresregular";
+  font-size: 60px;
+  padding: 20px;
+}
+
+a:hover {
+  text-decoration: 3px rgb(171, 18, 18) underline;
+}
+
+.button {
+  color: rgb(171, 18, 18);
+  background-color: transparent;
+  border: 2px solid rgb(171, 18, 18);
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  padding: 2px 3px;
+  transition: 0.5s;
+}
+.button a:hover {
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+.button a:after {
+  color: rgb(171, 18, 18);
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button a {
+  color: rgb(171, 18, 18);
+}
+.button:hover a:after {
+  opacity: 1;
+  right: 0;
+}

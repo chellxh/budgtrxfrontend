@@ -1,0 +1,9 @@
+
+@font-face {
+    font-family: 'empiresregular';
+    src: url('./empires-webfont.woff2') format('woff2'),
+         url('./empires-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
