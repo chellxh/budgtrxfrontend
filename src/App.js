@@ -1,30 +1,21 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// 🎮
+import Home from "./Components/Home/Home";
+import NavBar from "./Components/NavBar/NavBar";
+import Transactions from "./Components/Transactions/Transactions";
 
 function App() {
-  const [transactions, setTransactions] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  async function fetchData() {
-    try {
-      let result = await axios.get("http://localhost:3001/summary");
-      setTransactions(result.data);
-    } catch (e) {
-      console.log(e);
-    }
-  }
   return (
     <div className="App">
-      {transactions.map((transaction) => {
-        return (
-          <div key={transaction.id}>
-            {transaction.date} / {transaction.category} / {transaction.amount}
-          </div>
-        );
-      })}
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/transactions" element={<Transactions />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
