@@ -46,11 +46,9 @@ function Transaction() {
       <h2>Show Transaction</h2>
 
       <div className="trans-info">
-        <p>ID: {transaction?.id}</p>
+        <p id="id">ID: {transaction?.id}</p>
         <p>Date: {transaction?.date}</p>
-        <p className="categoryImg">
-          <LocalAtmIcon />
-        </p>
+
         <h4 className="trans-name">Name: {transaction?.name}</h4>
         <p>Amount: {transaction?.amount}</p>
         <p>From: {transaction?.from}</p>

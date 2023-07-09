@@ -1,7 +1,25 @@
-body {
-  text-align: center;
+h2 {
+  margin: 25px 25px;
+  margin-left: 250px;
+  color: whitesmoke;
+  border-left: 3px solid rgb(171, 18, 18);
+  border-bottom: 5px solid rgb(171, 18, 18);
+  padding-left: 10px;
 }
 
 .transaction {
+  color: white;
   margin: 20px;
+}
+
+h4 {
+  color: rgb(171, 18, 18);
+}
+
+#id {
+  color: rgb(44, 44, 44);
+}
+
+p {
+  text-align: center;
 }
