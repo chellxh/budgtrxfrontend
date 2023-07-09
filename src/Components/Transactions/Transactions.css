@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "ysabeausc";
+  src: url("../../assets/font/ysabeauSC/YsabeauSC-VariableFont_wght.ttf")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "ysabeausc";
+  /* text-align: center; */
+}
+
+.trans-h2 {
+  margin: 25px 25px;
+  margin-left: 250px;
+  color: whitesmoke;
+  border-left: 3px solid rgb(171, 18, 18);
+  border-bottom: 5px solid rgb(171, 18, 18);
+  padding-left: 10px;
+}
+.balance {
+  color: rgb(171, 18, 18);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.transactions {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#transactions-table {
+  border-collapse: collapse;
+  color: rgb(171, 18, 18);
+  width: 100%;
+}
+
+#transactions-table td,
+#transactions-table th {
+  border: 1px solid #797777;
+  padding: 8px;
+}
+#trans-row:hover {
+  background-color: gray;
+}
+
+#transactions-table a {
+  color: whitesmoke;
+}

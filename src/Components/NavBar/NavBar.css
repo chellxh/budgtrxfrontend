@@ -6,13 +6,7 @@
   font-style: normal;
 }
 
-/* @font-face {
-  font-family: "ysabaeusc";
-  src: url("../../assets/font/ysabeauSC/YsabeauSC-VariableFont_wght.ttf")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-} */
+
 
 .navbar {
   display: flex;
