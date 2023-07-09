@@ -5,7 +5,6 @@ import "./Transactions.css";
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
-  const [balance, setBalance] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -15,26 +14,15 @@ function Transactions() {
     try {
       let result = await axios.get("http://localhost:3001/summary");
       setTransactions(result.data);
-      getBalance();
     } catch (e) {
       console.log(e);
     }
   }
 
-  function getBalance() {
-    let newBalance = 0;
-    transactions.forEach(({ id, amount }) => {
-      if (id) {
-        newBalance += amount;
-      }
-    });
-    setBalance(newBalance);
-  }
-
   return (
     <div>
       <h2 className="trans-h2">Transactions</h2>
-      <h3 className="balance">Current Balance - {balance}</h3>
+
       <div className="transactions">
         <table id="transactions-table">
           <tbody>

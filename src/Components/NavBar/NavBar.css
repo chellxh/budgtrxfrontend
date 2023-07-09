@@ -6,8 +6,6 @@
   font-style: normal;
 }
 
-
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,7 +17,7 @@ span {
   color: rgb(171, 18, 18);
   font-family: "empiresregular";
   font-size: 60px;
-  padding: 20px;
+  padding: 15px;
 }
 
 a:hover {
@@ -31,7 +29,6 @@ a:hover {
   background-color: transparent;
   border: 2px solid rgb(171, 18, 18);
   border-radius: 4px;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   cursor: pointer;
   position: relative;
@@ -59,4 +56,9 @@ a:hover {
 .button:hover a:after {
   opacity: 1;
   right: 0;
+}
+
+.balance {
+  color: rgb(171, 18, 18);
+  
 }

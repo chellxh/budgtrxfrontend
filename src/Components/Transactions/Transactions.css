@@ -19,11 +19,6 @@ body {
   border-bottom: 5px solid rgb(171, 18, 18);
   padding-left: 10px;
 }
-.balance {
-  color: rgb(171, 18, 18);
-  margin-bottom: 20px;
-  text-align: center;
-}
 
 .transactions {
   max-width: 1200px;
@@ -50,6 +45,3 @@ body {
   color: whitesmoke;
 }
 
-#num {
-  color: white;
-}

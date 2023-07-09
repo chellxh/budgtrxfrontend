@@ -9,7 +9,6 @@ function Home() {
         Check The Bag with <br />
         <span>BagCheck</span>
       </h1>
-      <div className="transactionsLink"><Link to="/transactions">View Transactions Here</Link></div>
     </div>
   );
 }
