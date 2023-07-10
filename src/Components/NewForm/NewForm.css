@@ -1,0 +1,16 @@
+h2 {
+  margin: 25px 25px;
+  margin-left: 250px;
+  color: whitesmoke;
+  border-left: 3px solid rgb(171, 18, 18);
+  border-bottom: 5px solid rgb(171, 18, 18);
+  padding-left: 10px;
+}
+
+.new-form {
+  text-align: center;
+  color: whitesmoke;
+}
+input {
+  background-color: rgb(197, 194, 194);
+}

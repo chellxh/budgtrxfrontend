@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 
 import "./Transaction.css";
 
@@ -51,7 +50,7 @@ function Transaction() {
 
         <h4 className="trans-name">Name: {transaction?.name}</h4>
         <p>Amount: {transaction?.amount}</p>
-        <p>From: {transaction?.from}</p>
+        <p id="from">From: {transaction?.from}</p>
         <p>Category: {transaction?.category}</p>
       </div>
       <div className="trans-buttons">

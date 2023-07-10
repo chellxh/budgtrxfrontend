@@ -5,23 +5,47 @@ import "./Transactions.css";
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
+  const [balance, setBalance] = useState(0);
+  let balColor = {
+    color: "white",
+  };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [transactions]);
 
+  if (balance < 0) {
+    balColor.color = "red";
+  } else if (balance <= 1000) {
+    balColor.color = "yellow";
+  } else {
+    balColor.color = "green";
+  }
   async function fetchData() {
     try {
       let result = await axios.get("http://localhost:3001/summary");
       setTransactions(result.data);
+      getBalance();
     } catch (e) {
       console.log(e);
     }
   }
 
+  function getBalance() {
+    let currentBalance = 0;
+    transactions.forEach(({ amount }) => {
+      currentBalance += Number(amount);
+    });
+    setBalance(currentBalance);
+  }
+
   return (
     <div>
       <h2 className="trans-h2">Transactions</h2>
+
+      <div className="balance" style={balColor}>
+        Balance: {balance}
+      </div>
 
       <div className="transactions">
         <table id="transactions-table">
@@ -52,7 +76,5 @@ function Transactions() {
     </div>
   );
 }
-
-// color change on balance
 
 export default Transactions;

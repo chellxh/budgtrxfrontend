@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import "./Home.css";
 
 function Home() {
@@ -8,6 +9,8 @@ function Home() {
       <h1>
         Check The Bag with <br />
         <span>BagCheck</span>
+        <br />
+        <Link to="/transactions">ᗆ View Transactions Here ᗉ</Link>
       </h1>
     </div>
   );

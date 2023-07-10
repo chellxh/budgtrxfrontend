@@ -24,6 +24,8 @@ function EditTransaction() {
 
       const { name, amount, date, from, category } = result.data.data;
 
+      // console.log(category);
+
       setNameS(name);
       setAmountS(amount);
       setDateS(date);
@@ -51,7 +53,11 @@ function EditTransaction() {
       console.log(e);
     }
   }
-  console.log();
+  // console.log(categoryS);
+
+  function handleBack() {
+    navigate(`/transactions/${id}`);
+  }
 
   return (
     <div className="edit">
@@ -100,7 +106,7 @@ function EditTransaction() {
           <div>
             <label htmlFor="category">Category: </label>
             <select onChange={(e) => setCategoryS(e.target.value)}>
-              <option> - Choose A Category</option>
+              <option>{categoryS}</option>
               <option value="general entertainment">
                 General Entertainment
               </option>
@@ -111,11 +117,13 @@ function EditTransaction() {
               <option value="groceries">Groceries</option>
               <option value="pay anyone transfer">Pay Anyone Transfer</option>
               <option value="restaurant">Restaurant</option>
+              <option value="income">Income</option>
               <option value="work">Work</option>
             </select>
 
             <br />
           </div>
+          <button onClick={handleBack}>Back</button>
           <button>Submit</button>
         </form>
       </div>

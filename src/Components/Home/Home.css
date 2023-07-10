@@ -1,5 +1,5 @@
 body {
-  background-color: #010;
+  background-color: rgb(18, 17, 17);
 }
 
 .home {
@@ -34,6 +34,8 @@ h1 span {
   text-transform: uppercase;
   margin: 10px 0;
 }
-h1 a {
+h1 a,
+h1 a:hover {
   text-decoration: 2px transparent underline;
+  color: rgb(171, 18, 18);
 }
