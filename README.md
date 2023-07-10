@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# BagCheck App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+BagCheck is an app where a user can log their financial transactions. I've brought tgether the skills I have learned thus far: Javascript, css, React and RESTful routes. I created my own backend server that provides data.
 
-## Available Scripts
+https://github.com/chellxh/budgtr-backend
 
-In the project directory, you can run:
+## BagCheck Frontend Features
 
-### `npm start`
+1. All pages should include the same navigation bar, which includes the name of the application and a button to create a new transaction.
+1. An Index page that presents all of the transactions in my backend server.
+1. After clicking on a single transaction, the user is brought to a Show page which includes more detailed information about the transaction.
+1. When the button in the navigation bar to create a new transaction is clicked, the user is brought to a new page that includes a form to create a new transaction.
+1. Forms are properly labeled and the `type` of inputs are properly set.
+1. When a new transaction form is submitted, the transaction is created in the database and the user is brought to that new transaction's Show page.
+1. On the transaction's Show page, there is a button to edit the current transaction. When clicked, the user is brought to a form page with data already filled in that can be edited.
+1. When an edited transaction form is submitted, the resource is edited in the database and the user is brought to that new transaction's Show page.
+1. On the transaction's Show page, there is a button to delete the current show page.
+1. Using the transaction's data, a balance calculation is performed on the front-end application and displayed to the user on the Index page. In addition to the total, the CSS changes based on the value - green color if the bank account total is above 1000, a yellowish color if the bank account total is between 1 and 1000 and a reddish color if the bank account total is less than or equal to 0.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### BagCheck Backend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+My server incorporates:
 
-### `npm test`
+- `id` - A unique number for each item
+  - `item_name`- string - the name of the transaction (ie: income, savings, cat food, etc.)
+  - `amount` -number - the amount of the transaction
+  - `date`- string - the date should be a simple string. As a bonus activity, use the date object and date input field and format it to be human-readable
+  - `from` - string - who this transaction was with (ie. employer, bank, pet store, grocery store, etc)
+  - `category` - string - what category does this fall into (income, savings, pets, food, etc)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. A route exists to create new resources.
+1. A route exists to read all resources.
+1. A route exists to read a single resource.
+1. A route exists to update a single resource.
+1. A route exists to delete a single resource.
+1. An appropriate "Not Found" response is given when a route is requested that does not match the created routes.
