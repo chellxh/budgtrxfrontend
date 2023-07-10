@@ -5,6 +5,11 @@ import axios from "axios";
 import "./Transaction.css";
 
 function Transaction() {
+  let url =
+    process.env.NODE_ENV === "production"
+      ? "https://bagcheckxbackend.onrender.com/"
+      : "localhost:3001";
+
   const { id } = useParams();
   const navigate = useNavigate();
   const [transaction, setTransaction] = useState({});
@@ -15,7 +20,7 @@ function Transaction() {
 
   async function fetchData() {
     try {
-      let result = await axios.get(`http://localhost:3001/summary/${id}`);
+      let result = await axios.get(`${url}/summary/${id}`);
       setTransaction(result.data.data);
     } catch (e) {
       console.log(e);
@@ -32,7 +37,7 @@ function Transaction() {
 
   async function handleDeleteById(id) {
     try {
-      await axios.delete(`http://localhost:3001/summary/${id}`);
+      await axios.delete(`${url}/summary/${id}`);
       alert("Transaction Deleted!");
       navigate("/transactions");
     } catch (e) {

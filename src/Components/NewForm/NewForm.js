@@ -5,6 +5,12 @@ import { useNavigate } from "react-router-dom";
 import "./NewForm.css";
 
 function NewForm() {
+
+  let url =
+    process.env.NODE_ENV === "production"
+      ? "https://bagcheckxbackend.onrender.com/"
+      : "localhost:3001";
+  
   const [newData, setNewData] = useState({
     id: uuidv4(),
     name: "",
@@ -21,7 +27,7 @@ function NewForm() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3001/summary", {
+      await axios.post(`${url}/summary`, {
         ...newData,
       });
       alert("New Transaction Created!");
