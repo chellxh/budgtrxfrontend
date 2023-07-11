@@ -34,3 +34,7 @@ My server incorporates:
 1. A route exists to update a single resource.
 1. A route exists to delete a single resource.
 1. An appropriate "Not Found" response is given when a route is requested that does not match the created routes.
+
+#### Deployed Site
+
+https://bagcheck.netlify.app/
