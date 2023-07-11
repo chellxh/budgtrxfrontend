@@ -10,6 +10,9 @@ body {
   font-family: "ysabeausc";
   /* text-align: center; */
 }
+.balance {
+  text-align: center;
+}
 
 .trans-h2 {
   margin: 25px 25px;

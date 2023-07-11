@@ -39,3 +39,10 @@ h1 a:hover {
   text-decoration: 2px transparent underline;
   color: rgb(171, 18, 18);
 }
+
+@media screen and (max-width: 720px) {
+  h1 span {
+    font-size: 100px;
+    margin: 5px;
+  }
+}
