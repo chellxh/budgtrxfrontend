@@ -4,13 +4,12 @@ import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import "./NewForm.css";
 
-function NewForm() {
+let url =
+  process.env.NODE_ENV === "production"
+    ? "https://bagcheckxbackend.onrender.com/"
+    : "http://localhost:3001/";
 
-  let url =
-    process.env.NODE_ENV === "production"
-      ? "https://bagcheckxbackend.onrender.com/"
-      : "localhost:3001";
-  
+function NewForm() {
   const [newData, setNewData] = useState({
     id: uuidv4(),
     name: "",
@@ -27,7 +26,7 @@ function NewForm() {
     e.preventDefault();
 
     try {
-      await axios.post(`${url}/summary`, {
+      await axios.post(`${url}summary`, {
         ...newData,
       });
       alert("New Transaction Created!");
@@ -84,7 +83,11 @@ function NewForm() {
           <br />
           <div>
             <label htmlFor="category">Category: </label>
-            <select onChange={(e) => setNewData({ ...newData, category: e.target.value })}>
+            <select
+              onChange={(e) =>
+                setNewData({ ...newData, category: e.target.value })
+              }
+            >
               <option value=""> - Choose A Category</option>
               <option value="general entertainment">
                 General Entertainment
@@ -98,7 +101,7 @@ function NewForm() {
               <option value="restaurant">Restaurant</option>
               <option value="work">Work</option>
             </select>
-            </div>
+          </div>
           <button>Submit</button>
         </form>
       </div>

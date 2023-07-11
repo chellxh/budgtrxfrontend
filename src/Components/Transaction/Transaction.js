@@ -8,7 +8,7 @@ function Transaction() {
   let url =
     process.env.NODE_ENV === "production"
       ? "https://bagcheckxbackend.onrender.com/"
-      : "localhost:3001";
+      : "http://localhost:3001/";
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ function Transaction() {
 
   async function fetchData() {
     try {
-      let result = await axios.get(`${url}/summary/${id}`);
+      let result = await axios.get(`${url}summary/${id}`);
       setTransaction(result.data.data);
     } catch (e) {
       console.log(e);
@@ -37,7 +37,7 @@ function Transaction() {
 
   async function handleDeleteById(id) {
     try {
-      await axios.delete(`${url}/summary/${id}`);
+      await axios.delete(`${url}summary/${id}`);
       alert("Transaction Deleted!");
       navigate("/transactions");
     } catch (e) {

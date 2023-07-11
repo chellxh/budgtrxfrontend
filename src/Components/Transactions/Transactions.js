@@ -3,13 +3,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Transactions.css";
 
-function Transactions() {
+let url =
+  process.env.NODE_ENV === "production"
+    ? "https://bagcheckxbackend.onrender.com/"
+    : "http://localhost:3001/";
 
-  let url =
-    process.env.NODE_ENV === "production"
-      ? "https://bagcheckxbackend.onrender.com/"
-      : "localhost:3001";
-  
+function Transactions() {
   const [transactions, setTransactions] = useState([]);
   const [balance, setBalance] = useState(0);
   let balColor = {
@@ -29,7 +28,7 @@ function Transactions() {
   }
   async function fetchData() {
     try {
-      let result = await axios.get(`${url}/summary`);
+      let result = await axios.get(`${url}summary`);
       setTransactions(result.data);
       getBalance();
     } catch (e) {
