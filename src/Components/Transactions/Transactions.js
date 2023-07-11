@@ -3,11 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Transactions.css";
 
-let url =
-  process.env.NODE_ENV === "production"
-    ? "https://bagcheckxbackend.onrender.com/"
-    : "http://localhost:3001/";
-
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
   const [balance, setBalance] = useState(0);
@@ -28,7 +23,11 @@ function Transactions() {
   }
   async function fetchData() {
     try {
-      let result = await axios.get(`${url}summary`);
+      const url =
+        process.env.NODE_ENV === "production"
+          ? `https://bagcheckxbackend.onrender.com/summary`
+          : `http://localhost:3001/summary`;
+      let result = await axios.get(url);
       setTransactions(result.data);
       getBalance();
     } catch (e) {

@@ -2,11 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-let url =
-  process.env.NODE_ENV === "production"
-    ? "https://bagcheckxbackend.onrender.com/"
-    : "http://localhost:3001/";
-
 function EditTransaction() {
   const { id } = useParams();
   const [nameS, setNameS] = useState("");
@@ -23,7 +18,11 @@ function EditTransaction() {
 
   async function fetchData() {
     try {
-      let result = await axios.get(`${url}summary/${id}`);
+      const url =
+        process.env.NODE_ENV === "production"
+          ? `https://bagcheckxbackend.onrender.com/summary/${id}`
+          : `http://localhost:3001/summary/${id}`;
+      let result = await axios.get(url);
 
       //   console.log(result.data.data);
 
@@ -45,7 +44,11 @@ function EditTransaction() {
     e.preventDefault();
 
     try {
-      await axios.put(`${url}summary/${id}`, {
+      const url =
+        process.env.NODE_ENV === "production"
+          ? `https://bagcheckxbackend.onrender.com/summary/${id}`
+          : `http://localhost:3001/summary/${id}`;
+      await axios.put(url, {
         name: nameS,
         amount: amountS,
         date: dateS,
